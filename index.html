@@ -34,6 +34,7 @@ new Chart (canvas, {
                     yAxisKey: 'volume',
                 },
                 yAxisID: 'y_volume',
+                hidden: true,
             },
             {
                 type: 'line',
@@ -55,6 +56,7 @@ new Chart (canvas, {
                     yAxisKey: 'oi',
                 },
                 yAxisID: 'y_oi',
+                hidden: true,
             },
         ],
     },
@@ -72,11 +74,12 @@ new Chart (canvas, {
                 },
             },
             y_volume: {
-                display: false,
                 position: 'right',
+                grace: '90%',
                 grid: {
                     display: false,
                 },
+                display: false,
             },
             y_delta: {
                 position: 'left',
@@ -85,12 +88,13 @@ new Chart (canvas, {
                 },
             },
             y_oi: {
-                display: false,
                 position: 'left',
                 reverse: true,
+                grace: '90%',
                 grid: {
                     display: false,
                 },
+                display: false,
             },
         },
 
