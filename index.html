@@ -8,26 +8,94 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script type="module">
 
-import bpr from './bpr.mjs'
 import spoo from './spoo.mjs'
+import bpr from './bpr.mjs'
 
 let canvas = document .querySelector ('canvas');
 new Chart (canvas, {
-    type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1
-        }]
+        datasets: [
+            {
+                type: 'line',
+                label: 'price',
+                data: spoo,
+                parsing: {
+                    xAxisKey: 'date',
+                    yAxisKey: 'price',
+                },
+                yAxisID: 'y_price',
+            },
+            {
+                type: 'bar',
+                label: 'volume',
+                data: spoo,
+                parsing: {
+                    xAxisKey: 'date',
+                    yAxisKey: 'volume',
+                },
+                yAxisID: 'y_volume',
+            },
+            {
+                type: 'line',
+                label: 'delta',
+                data: bpr,
+                parsing: {
+                    xAxisKey: 'date',
+                    yAxisKey: 'delta',
+                },
+                yAxisID: 'y_delta',
+                fill: 'origin',
+            },
+            {
+                type: 'bar',
+                label: 'oi',
+                data: bpr,
+                parsing: {
+                    xAxisKey: 'date',
+                    yAxisKey: 'oi',
+                },
+                yAxisID: 'y_oi',
+            },
+        ],
     },
     options: {
         scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
+            x: {
+                grid: {
+                    display: false,
+                }
+            },
+            y_price: {
+                position: 'right',
+                grid: {
+                    display: false,
+                },
+            },
+            y_volume: {
+                display: false,
+                position: 'right',
+                grid: {
+                    display: false,
+                },
+            },
+            y_delta: {
+                position: 'left',
+                grid: {
+                    display: false,
+                },
+            },
+            y_oi: {
+                display: false,
+                position: 'left',
+                reverse: true,
+                grid: {
+                    display: false,
+                },
+            },
+        },
+
+        pointStyle: false,
+        tension: 0.25,
     },
 })
 
