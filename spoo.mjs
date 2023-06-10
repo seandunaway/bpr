@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-let date_start = Math .round (new Date ('2021') / 1000)
+let date_start = Math .round (new Date ('2018') / 1000)
 let date_end = Math .round (Date .now () / 1000)
 
 let response = await fetch (`https://query2.finance.yahoo.com/v8/finance/chart/ES=F?interval=1d&period1=${date_start}&period2=${date_end}`)

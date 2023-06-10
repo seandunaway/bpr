@@ -1,13 +1,10 @@
 #!/usr/bin/env node
 
-let index_response = await fetch ('https://www.cftc.gov/MarketReports/BankParticipationReports/index.htm')
-let index_response_text = await index_response .text ()
-
-let report_urls = index_response_text .match (/\/MarketReports\/BankParticipation(?:Reports)*\/dea[a-z]{3,}[0-9]{2}f/g)
+import report_urls from './bpr_report_urls.json' assert { type: 'json' }
 
 let bpr = []
 for (let report_url of report_urls) {
-    let report_response = await fetch (`https://www.cftc.gov/${report_url}`)
+    let report_response = await fetch (report_url)
     let report_response_text = await report_response .text ()
 
     let report_date = report_response_text .match (/REPORT DATE: (\d{1,2}\/\d{1,2}\/\d{4})</)
