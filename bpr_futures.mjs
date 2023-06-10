@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import report_urls from './bpr_urls.json' assert { type: 'json' }
+import bpr_urls from './bpr_urls.json' assert { type: 'json' }
 
-let bpr = []
-for (let report_url of report_urls) {
+let bpr_futures = []
+for (let report_url of bpr_urls.futures) {
     let report_response = await fetch (report_url)
     let report_response_text = await report_response .text ()
 
@@ -23,10 +23,10 @@ for (let report_url of report_urls) {
         oi,
         delta,
     }
-    bpr .push (report)
+    bpr_futures .push (report)
 }
 
-export default bpr
+export default bpr_futures
 
 /*
 [

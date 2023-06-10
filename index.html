@@ -10,13 +10,14 @@
 
 import dates from './dates.mjs'
 import spoo from './spoo.mjs'
-import bpr from './bpr.mjs'
+import bpr_futures from './bpr_futures.mjs'
 
 let canvas = document .querySelector ('canvas');
 new Chart (canvas, {
     data: {
         labels: dates,
         datasets: [
+            // spoo
             {
                 type: 'line',
                 label: 'price',
@@ -38,10 +39,12 @@ new Chart (canvas, {
                 yAxisID: 'y_volume',
                 hidden: true,
             },
+
+            // futures
             {
                 type: 'line',
-                label: 'delta',
-                data: bpr,
+                label: 'futures delta',
+                data: bpr_futures,
                 parsing: {
                     xAxisKey: 'date',
                     yAxisKey: 'delta',
@@ -51,8 +54,8 @@ new Chart (canvas, {
             },
             {
                 type: 'bar',
-                label: 'oi',
-                data: bpr,
+                label: 'futures oi',
+                data: bpr_futures,
                 parsing: {
                     xAxisKey: 'date',
                     yAxisKey: 'oi',
@@ -60,6 +63,8 @@ new Chart (canvas, {
                 yAxisID: 'y_oi',
                 hidden: true,
             },
+
+            // options
         ],
     },
     options: {
