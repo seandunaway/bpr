@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+import { date_string } from './dates.mjs'
+
 let date_start = Math .round (new Date ('2018') / 1000)
 let date_end = Math .round (Date .now () / 1000)
 
@@ -9,17 +11,12 @@ let response_result = response_json.chart.result[0]
 
 let spoo = []
 for (let i = 0; i <= response_result.timestamp.length; i++) {
-    let date = new Date (response_result.timestamp [i] * 1000)
-    let date_month = date .getMonth () + 1
-    let date_day = date .getDate ()
-    let date_year = date .getFullYear ()
-
-    let date_string = `${date_month}/${date_day}/${date_year}`
+    let date = date_string (new Date (response_result.timestamp [i] * 1000))
     let price = response_result.indicators.quote[0].close [i]
     let volume = response_result.indicators.quote[0].volume [i]
 
     let quote = {
-        date: date_string,
+        date,
         price,
         volume,
     }

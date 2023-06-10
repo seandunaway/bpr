@@ -5,11 +5,7 @@ let date_end = new Date ()
 
 let dates = []
 for (let date_i = date_start; date_i <= date_end; date_i .setDate (date_i .getDate () + 1)) {
-    let month = date_i .getMonth () + 1
-    let day = date_i .getDate ()
-    let year = date_i .getFullYear ()
-
-    let date = `${month}/${day}/${year}`
+    let date = date_string (date_i)
     dates .push (date)
 }
 
@@ -23,3 +19,12 @@ export default dates
   '12/31/2017', '1/1/2018',  '1/2/2018',  '1/3/2018',  '1/4/2018'
 ]
 */
+
+export function date_string (date) {
+  let month = date .getMonth () + 1
+  let day = date .getDate ()
+  let year = date .getFullYear ()
+
+  let date_string = `${month}/${day}/${year}`
+  return date_string
+}
