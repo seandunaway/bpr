@@ -20,7 +20,6 @@ for (let i = 0; i <= response_result.timestamp.length; i++) {
         price,
         volume,
     }
-
     spoo .push (quote)
 }
 

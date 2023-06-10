@@ -24,7 +24,6 @@ for (let i = 0; i < possible_urls.length; i ++) {
         response = await fetch (possible_url, { method: 'HEAD' })
     } catch (error) {
         console .error (error.message)
-
         // retry
         i --
         continue

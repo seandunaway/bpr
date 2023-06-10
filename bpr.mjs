@@ -23,7 +23,6 @@ for (let report_url of report_urls) {
         oi,
         delta,
     }
-
     bpr .push (report)
 }
 
