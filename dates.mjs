@@ -17,7 +17,7 @@ export default dates
 ]
 */
 
-export function date_string (date) {
+export function date_string (date = new Date ()) {
   let month = date .getMonth () + 1
   let day = date .getDate ()
   let year = date .getFullYear ()
