@@ -27,10 +27,10 @@ export default spoo
 
 /*
 [
-    {
-        date: '1/3/2021',
-        price: 3692.25,
-        volume: 2037616
-    }
+  {
+    date: '1/3/2021',
+    price: 3692.25,
+    volume: 2037616
+  }
 ]
 */
