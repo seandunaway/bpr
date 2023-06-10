@@ -21,10 +21,11 @@ for (let year of years) {
 
 let report_urls = []
 for (let i = 0; i < possible_urls.length; i ++) {
+    let possible_url = possible_urls [i]
+
     // sleep
     await new Promise (function (resolve) { setTimeout (resolve, 100) })
 
-    let possible_url = possible_urls [i]
     let response
     try {
         response = await fetch (possible_url, { method: 'HEAD' })
@@ -44,7 +45,8 @@ for (let i = 0; i < possible_urls.length; i ++) {
     report_urls .push (possible_url)
 }
 
-writeFileSync ('./bpr_urls.json', JSON.stringify (report_urls, false, 4))
+let json = JSON.stringify (report_urls, false, 4)
+writeFileSync ('./bpr_urls.json', json)
 
 export default report_urls
 
