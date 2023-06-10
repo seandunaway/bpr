@@ -24,9 +24,6 @@ for (let i = 0; i <= response_result.timestamp.length; i++) {
     spoo .push (quote)
 }
 
-console .log (spoo)
-console .log (spoo.length)
-
 export default spoo
 
 /*

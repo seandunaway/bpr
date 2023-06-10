@@ -41,9 +41,6 @@ for (let i = 0; i < possible_urls.length; i ++) {
 
 writeFileSync ('./bpr_report_urls.json', JSON.stringify (report_urls))
 
-console .log (report_urls)
-console .log (report_urls.length)
-
 export default report_urls
 
 /*

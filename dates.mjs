@@ -9,9 +9,6 @@ for (let date_i = date_start; date_i <= date_end; date_i .setDate (date_i .getDa
     dates .push (date)
 }
 
-console .log (dates)
-console .log (dates.length)
-
 export default dates
 
 /*

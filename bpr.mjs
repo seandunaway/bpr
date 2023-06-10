@@ -27,9 +27,6 @@ for (let report_url of report_urls) {
     bpr .push (report)
 }
 
-console .log (bpr)
-console .log (bpr.length)
-
 export default bpr
 
 /*
