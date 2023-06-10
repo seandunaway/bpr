@@ -19,7 +19,7 @@ for (let year of years) {
     }
 }
 
-let report_urls = []
+let urls = []
 for (let i = 0; i < possible_urls.length; i ++) {
     let possible_url = possible_urls [i]
 
@@ -42,13 +42,13 @@ for (let i = 0; i < possible_urls.length; i ++) {
     }
 
     console .log ('found:', possible_url)
-    report_urls .push (possible_url)
+    urls .push (possible_url)
 }
 
-let json = JSON.stringify (report_urls, false, 4)
+let json = JSON.stringify (urls, false, 4)
 writeFileSync ('./bpr_urls.json', json)
 
-export default report_urls
+export default urls
 
 /*
 [
