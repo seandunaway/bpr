@@ -19,7 +19,11 @@ for (let year of years) {
     }
 }
 
-let urls = []
+let urls = {
+    futures: [],
+    options: [],
+    other: [],
+}
 for (let i = 0; i < possible_urls.length; i ++) {
     let possible_url = possible_urls [i]
 
@@ -42,7 +46,18 @@ for (let i = 0; i < possible_urls.length; i ++) {
     }
 
     console .log ('found:', possible_url)
-    urls .push (possible_url)
+
+    let last_character = possible_url .charAt (possible_url.length - 1)
+    switch (last_character) {
+        case 'f':
+            urls.futures .push (possible_url)
+            break
+        case 'o':
+            urls.options .push (possible_url)
+            break
+        default:
+            urls.other .push (possible_url)
+    }
 }
 
 let json = JSON.stringify (urls, false, 4)
