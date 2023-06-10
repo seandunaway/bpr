@@ -45,7 +45,6 @@ export default report_urls
 
 /*
 [
-  'https://www.cftc.gov/MarketReports/BankParticipationReports/deajan18f',
-  'https://www.cftc.gov/MarketReports/BankParticipationReports/deafeb18f'
+  'https://www.cftc.gov/MarketReports/BankParticipationReports/deajan18f'
 ]
 */
