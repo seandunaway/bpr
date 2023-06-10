@@ -8,12 +8,14 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script type="module">
 
+import dates from './dates.mjs'
 import spoo from './spoo.mjs'
 import bpr from './bpr.mjs'
 
 let canvas = document .querySelector ('canvas');
 new Chart (canvas, {
     data: {
+        labels: dates,
         datasets: [
             {
                 type: 'line',
