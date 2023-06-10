@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import report_urls from './bpr_report_urls.json' assert { type: 'json' }
+import report_urls from './bpr_urls.json' assert { type: 'json' }
 
 let bpr = []
 for (let report_url of report_urls) {

@@ -44,7 +44,7 @@ for (let i = 0; i < possible_urls.length; i ++) {
     report_urls .push (possible_url)
 }
 
-writeFileSync ('./bpr_report_urls.json', JSON.stringify (report_urls, false, 4))
+writeFileSync ('./bpr_urls.json', JSON.stringify (report_urls, false, 4))
 
 export default report_urls
 
