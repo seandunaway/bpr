@@ -5,9 +5,9 @@ let date_end = new Date ()
 
 let dates = []
 for (let date_i = date_start; date_i <= date_end; date_i .setDate (date_i .getDate () + 1)) {
-    let month = date_i.getMonth () + 1
-    let day = date_i.getDate ()
-    let year = date_i.getFullYear ()
+    let month = date_i .getMonth () + 1
+    let day = date_i .getDate ()
+    let year = date_i .getFullYear ()
 
     let date = `${month}/${day}/${year}`
     dates .push (date)

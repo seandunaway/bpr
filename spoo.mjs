@@ -10,9 +10,9 @@ let response_result = response_json.chart.result[0]
 let spoo = []
 for (let i = 0; i <= response_result.timestamp.length; i++) {
     let date = new Date (response_result.timestamp [i] * 1000)
-    let date_month = date.getMonth () + 1
-    let date_day = date.getDate ()
-    let date_year = date.getFullYear ()
+    let date_month = date .getMonth () + 1
+    let date_day = date .getDate ()
+    let date_year = date .getFullYear ()
 
     let date_string = `${date_month}/${date_day}/${date_year}`
     let price = response_result.indicators.quote[0].close [i]
