@@ -2,14 +2,20 @@
 
 import { writeFileSync } from 'node:fs'
 
+let base_url = 'https://www.cftc.gov/MarketReports/'
 let years = ['18', '19', '20', '21', '22', '23']
 let months = ['jan', 'feb', 'jfeb', 'mar', 'jmar', 'apr', 'may', 'jun', 'june', 'jul', 'july', 'aug', 'august', 'sep', 'september', 'oct', 'october', 'nov', 'dec']
+let folders = ['BankParticipation', 'BankParticipationReports']
+let suffixes = ['f', 'o']
 
 let possible_urls = []
 for (let year of years) {
     for (let month of months) {
-        possible_urls .push (`https://www.cftc.gov/MarketReports/BankParticipation/dea${month}${year}f`)
-        possible_urls .push (`https://www.cftc.gov/MarketReports/BankParticipationReports/dea${month}${year}f`)
+        for (let folder of folders) {
+            for (let suffix of suffixes) {
+                possible_urls .push (`${base_url}${folder}/dea${month}${year}${suffix}`)
+            }
+        }
     }
 }
 
@@ -44,6 +50,7 @@ export default report_urls
 
 /*
 [
-  'https://www.cftc.gov/MarketReports/BankParticipationReports/deajan18f'
+  'https://www.cftc.gov/MarketReports/BankParticipationReports/deajan18f',
+  'https://www.cftc.gov/MarketReports/BankParticipationReports/deajan18o'
 ]
 */
