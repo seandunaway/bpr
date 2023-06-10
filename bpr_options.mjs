@@ -4,7 +4,6 @@ import bpr_urls from './bpr_urls.json' assert { type: 'json' }
 
 let bpr_options = []
 for (let report_url of bpr_urls.options) {
-    console.log (report_url)
     let report_response = await fetch (report_url)
     let report_response_text = await report_response .text ()
 

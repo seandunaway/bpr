@@ -11,6 +11,7 @@
 import dates from './dates.mjs'
 import spoo from './spoo.mjs'
 import bpr_futures from './bpr_futures.mjs'
+import bpr_options from './bpr_options.mjs'
 
 let canvas = document .querySelector ('canvas');
 new Chart (canvas, {
@@ -42,17 +43,6 @@ new Chart (canvas, {
 
             // futures
             {
-                type: 'line',
-                label: 'futures delta',
-                data: bpr_futures,
-                parsing: {
-                    xAxisKey: 'date',
-                    yAxisKey: 'delta',
-                },
-                yAxisID: 'y_delta',
-                fill: 'origin',
-            },
-            {
                 type: 'bar',
                 label: 'futures oi',
                 data: bpr_futures,
@@ -63,8 +53,55 @@ new Chart (canvas, {
                 yAxisID: 'y_oi',
                 hidden: true,
             },
+            {
+                type: 'line',
+                label: 'futures delta',
+                data: bpr_futures,
+                parsing: {
+                    xAxisKey: 'date',
+                    yAxisKey: 'delta',
+                },
+                yAxisID: 'y_delta',
+                fill: 'origin',
+            },
+
 
             // options
+            {
+                type: 'line',
+                label: 'call delta',
+                data: bpr_options,
+                parsing: {
+                    xAxisKey: 'date',
+                    yAxisKey: 'call_delta',
+                },
+                yAxisID: 'y_delta',
+                fill: 'origin',
+                hidden: true,
+            },
+            {
+                type: 'line',
+                label: 'put delta',
+                data: bpr_options,
+                parsing: {
+                    xAxisKey: 'date',
+                    yAxisKey: 'put_delta',
+                },
+                yAxisID: 'y_delta',
+                fill: 'origin',
+                hidden: true,
+            },
+            {
+                type: 'line',
+                label: 'call put delta',
+                data: bpr_options,
+                parsing: {
+                    xAxisKey: 'date',
+                    yAxisKey: 'call_put_delta',
+                },
+                yAxisID: 'y_delta',
+                fill: 'origin',
+            },
         ],
     },
     options: {
@@ -88,12 +125,6 @@ new Chart (canvas, {
                 },
                 display: false,
             },
-            y_delta: {
-                position: 'left',
-                grid: {
-                    display: false,
-                },
-            },
             y_oi: {
                 position: 'left',
                 reverse: true,
@@ -102,6 +133,12 @@ new Chart (canvas, {
                     display: false,
                 },
                 display: false,
+            },
+            y_delta: {
+                position: 'left',
+                grid: {
+                    display: false,
+                },
             },
         },
 
