@@ -2,8 +2,8 @@
 
 import { writeFileSync } from 'node:fs'
 
-let months = ['jan', 'feb', 'jfeb', 'mar', 'jmar', 'apr', 'may', 'jun', 'june', 'jul', 'july', 'aug', 'august', 'sep', 'september', 'oct', 'october', 'nov', 'dec']
 let years = ['18', '19', '20', '21', '22', '23']
+let months = ['jan', 'feb', 'jfeb', 'mar', 'jmar', 'apr', 'may', 'jun', 'june', 'jul', 'july', 'aug', 'august', 'sep', 'september', 'oct', 'october', 'nov', 'dec']
 
 let possible_urls = []
 for (let year of years) {
