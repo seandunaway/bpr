@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-let dates = []
-
 let date_start = new Date ('2018')
 let date_end = new Date ()
 
+let dates = []
 for (let date_i = date_start; date_i <= date_end; date_i .setDate (date_i .getDate () + 1)) {
     let month = date_i.getMonth () + 1
     let day = date_i.getDate ()
