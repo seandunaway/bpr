@@ -71,7 +71,8 @@
         "https://www.cftc.gov/MarketReports/BankParticipation/deasep23f",
         "https://www.cftc.gov/MarketReports/BankParticipation/deaoct23f",
         "https://www.cftc.gov/MarketReports/BankParticipation/deanov23f",
-        "https://www.cftc.gov/MarketReports/BankParticipation/deadec23f"
+        "https://www.cftc.gov/MarketReports/BankParticipation/deadec23f",
+        "https://www.cftc.gov/MarketReports/BankParticipation/deajan24f"
     ],
     "options": [
         "https://www.cftc.gov/MarketReports/BankParticipationReports/deajan18o",
@@ -145,7 +146,8 @@
         "https://www.cftc.gov/MarketReports/BankParticipation/deasep23o",
         "https://www.cftc.gov/MarketReports/BankParticipation/deaoct23o",
         "https://www.cftc.gov/MarketReports/BankParticipation/deanov23o",
-        "https://www.cftc.gov/MarketReports/BankParticipation/deadec23o"
+        "https://www.cftc.gov/MarketReports/BankParticipation/deadec23o",
+        "https://www.cftc.gov/MarketReports/BankParticipation/deajan24o"
     ],
     "other": []
 }
